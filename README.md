@@ -2,7 +2,7 @@
 Pathfinding med rekursjon for å finne veien ut av en labyrint.
 
 **Gjøremål**
--[ ] Del A - Klasser og datastruktur
+-[x] Del A - Klasser og datastruktur
 -[ ] Del B - Innlesing fra fil
 -[ ] Del C - Løsning ved rekursjon
 -[ ] Del D - Sykliske labyrinter
