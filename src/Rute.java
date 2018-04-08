@@ -10,6 +10,11 @@ public abstract class Rute {
     protected ArrayList<ArrayList<Rute>> utveier;
     protected ArrayList<Rute> kortesteUtvei;
 
+    public Rute(int rad, int kolonne){
+        radPosisjon = rad;
+        kolonnePosisjon = kolonne;
+    }
+
     public void setNaboer(Rute nord, Rute ost, Rute sor, Rute vest){
         this.nord = nord;
         this.ost = ost;
@@ -54,6 +59,6 @@ public abstract class Rute {
 
     @Override
     public String toString(){
-        return "(" + radPosisjon + ", " + kolonnePosisjon + ")";
+        return "(" + kolonnePosisjon + ", " + radPosisjon + ")";
     }
 }
