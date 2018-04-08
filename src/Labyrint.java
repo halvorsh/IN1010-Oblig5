@@ -76,6 +76,7 @@ public class Labyrint {
                 }
 
                 gjeldeneRute.setNaboer(nord, ost, sor, vest);
+                gjeldeneRute.setKooridnater(i,j);
             }
         }
 
