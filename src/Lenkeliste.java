@@ -1,6 +1,7 @@
 import java.util.Iterator;
 
 public class Lenkeliste<T> implements Liste<T>{
+    private int stoerrelse = 0;
 
     protected class Node{
         Node neste;
@@ -50,15 +51,6 @@ public class Lenkeliste<T> implements Liste<T>{
 
     @Override
     public int stoerrelse() {
-        int stoerrelse = 0;
-        if(start!=null) {
-            Node gjeldeneNode = start;
-            stoerrelse++;
-            while (gjeldeneNode != slutt) {
-                gjeldeneNode = gjeldeneNode.neste;
-                stoerrelse++;
-            }
-        }
         return stoerrelse;
     }
 
@@ -67,10 +59,12 @@ public class Lenkeliste<T> implements Liste<T>{
         if(start == null && pos!=0 || pos<0){
             throw(new UgyldigListeIndeks(pos));
         }else if(start == null){
+            stoerrelse++;
             Node node = new Node(x);
             start = node;
             slutt = node;
         }else{
+            stoerrelse++;
             Node nyNode = new Node(x);
             Node gjeldeneNode = start;
             Node forrigeNode = gjeldeneNode.forrige;
@@ -100,6 +94,8 @@ public class Lenkeliste<T> implements Liste<T>{
 
     @Override
     public void leggTil(T x) {
+        stoerrelse++;
+
         if(start == null){
             Node node = new Node(x);
 
@@ -181,6 +177,7 @@ public class Lenkeliste<T> implements Liste<T>{
             nesteNode.forrige = forrigeNode;
         }
 
+        stoerrelse--;
         return gjeldeneNode.gjenstand;
     }
 
@@ -194,6 +191,8 @@ public class Lenkeliste<T> implements Liste<T>{
         if(fjernetNode == slutt){
             slutt = null;
         }
+
+        stoerrelse--;
         return fjernetNode.gjenstand;
     }
 
