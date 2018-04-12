@@ -106,6 +106,8 @@ public class Labyrint {
 
         Liste<String> utvei = new Lenkeliste <>();
 
+        System.out.println("Det er " + startRute.utveier.size() + " utvei(er) fra dette punktet.\nDen korteste er:");
+
         if(startRute.kortesteUtvei != null){
             for(Rute rute : startRute.kortesteUtvei){
                 utvei.leggTil(rute.toString());
